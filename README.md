@@ -134,43 +134,6 @@ newYear.isHoliday(); // true
 | `addParticle(word, particle)` | 조사 자동 선택 | `"사과를"`, `"책이"` |
 | `numberToKorean(number)` | 숫자 한글 변환 | `"천이백삼십사"` |
 
-## moment.js에서 마이그레이션
-
-```javascript
-// Before (moment.js)
-const moment = require('moment');
-require('moment/locale/ko');
-moment.locale('ko');
-
-moment().fromNow();           // "몇 초 전" (어색함)
-moment().format('YYYY년 MM월 DD일');
-
-// After (hangul-moment)
-const hangulMoment = require('hangul-moment');
-
-hangulMoment().fromNow();     // "방금 전" (자연스러움)
-hangulMoment().format();      // 기본값이 한국어 형식
-```
-
-## 기여하기
-
-버그 리포트, 기능 제안, PR 모두 환영합니다!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 라이센스
-
-MIT 라이센스로 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
-
-## 감사
-
-- [moment.js](https://momentjs.com/) - 영감을 준 훌륭한 라이브러리
-- [day.js](https://day.js.org/) - 가벼운 설계의 참조
-- 한국어 개발자 커뮤니티의 피드백
 
 ---
 
