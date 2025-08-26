@@ -113,6 +113,87 @@ const newYear = hangulMoment('2025-01-01');
 newYear.isHoliday(); // true
 ```
 
+## 사용 예시
+```javascript
+const hangulMoment = require('hangul-moment');
+
+// ============================================================================
+// 예시 1: 인스타그램 스타일 게시물 타임스탬프
+// ============================================================================
+console.log('📸 인스타그램 스타일 타임스탬프');
+
+// 다양한 시점의 게시물들
+const posts = [
+    { content: "맛있는 점심!", createdAt: new Date() },                                    // 지금
+    { content: "아침 운동 완료", createdAt: new Date(Date.now() - 2*60*60*1000) },        // 2시간 전
+    { content: "좋은 하루!", createdAt: new Date(Date.now() - 24*60*60*1000) },           // 1일 전  
+    { content: "주말 나들이", createdAt: new Date(Date.now() - 2*24*60*60*1000) }         // 2일 전
+];
+
+posts.forEach(post => {
+    const timeAgo = hangulMoment(post.createdAt).fromNow();
+    console.log(`"${post.content}" - ${timeAgo}`);
+});
+
+console.log('\n출력 결과:');
+console.log('"맛있는 점심!" - 방금 전');
+console.log('"아침 운동 완료" - 2시간 전'); 
+console.log('"좋은 하루!" - 어제');
+console.log('"주말 나들이" - 그저께');
+
+// ============================================================================
+// 예시 2: 쇼핑몰 주문 알림 시스템
+// ============================================================================
+console.log('\n\n🛒 쇼핑몰 주문 알림 시스템');
+
+// 주문 목록
+const orders = [
+    { productName: "아이폰", orderTime: new Date(Date.now() - 30*60*1000) },    // 30분 전
+    { productName: "노트북", orderTime: new Date(Date.now() - 3*60*60*1000) },   // 3시간 전
+    { productName: "책", orderTime: new Date(Date.now() - 24*60*60*1000) }       // 1일 전
+];
+
+orders.forEach(order => {
+    // 조사 자동 처리로 자연스러운 문장 생성
+    const productWithParticle = hangulMoment.addParticle(order.productName, '이');
+    const timeAgo = hangulMoment(order.orderTime).fromNow();
+    
+    console.log(`${productWithParticle} ${timeAgo} 주문되었습니다.`);
+});
+
+console.log('\n출력 결과:');
+console.log('아이폰이 30분 전 주문되었습니다.');
+console.log('노트북이 3시간 전 주문되었습니다.');
+console.log('책이 어제 주문되었습니다.');
+
+// ============================================================================  
+// 예시 3: 일정 관리 앱 - 미래 일정 알림
+// ============================================================================
+console.log('\n\n📅 일정 관리 앱 - 미래 일정');
+
+// 앞으로의 일정들
+const events = [
+    { title: "치과 예약", date: new Date(Date.now() + 2*60*60*1000) },          // 2시간 후
+    { title: "친구 만나기", date: new Date(Date.now() + 24*60*60*1000) },       // 1일 후
+    { title: "회사 회식", date: new Date(Date.now() + 2*24*60*60*1000) },       // 2일 후
+    { title: "가족 모임", date: new Date(Date.now() + 7*24*60*60*1000) }        // 1주 후
+];
+
+events.forEach(event => {
+    const eventTime = hangulMoment(event.date);
+    const timeUntil = eventTime.fromNow();
+    const formattedDate = eventTime.format('M월 D일 (dd)');
+    
+    console.log(`${event.title}: ${formattedDate} (${timeUntil})`);
+});
+
+console.log('\n출력 결과:');
+console.log('치과 예약: 8월 26일 (화) (2시간 후)');
+console.log('친구 만나기: 8월 27일 (수) (내일)'); 
+console.log('회사 회식: 8월 28일 (목) (모레)');
+console.log('가족 모임: 9월 2일 (월) (1주 후)');
+```
+
 ## API 레퍼런스
 
 ### 메서드
