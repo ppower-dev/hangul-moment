@@ -21,16 +21,16 @@
     "i18n",
     "localization"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "ppower-dev <smothchoco@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/hangul-moment.git"
+    "url": "https://github.com/ppower-dev/hangul-moment.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/hangul-moment/issues"
+    "url": "https://github.com/ppower-dev/hangul-moment/issues"
   },
-  "homepage": "https://github.com/yourusername/hangul-moment#readme",
+  "homepage": "https://github.com/ppower-dev/hangul-moment#readme",
   "engines": {
     "node": ">=12.0.0"
   },
