@@ -1,8 +1,3 @@
-/**
- * hangul-moment - 한국어 친화적 날짜/시간 라이브러리
- * moment.js, day.js의 한국어 특화 버전
- */
-
 class HangulMoment {
   constructor(date) {
     this.date = date ? new Date(date) : new Date();
