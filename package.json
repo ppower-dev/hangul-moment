@@ -1,0 +1,42 @@
+{
+  "name": "hangul-moment",
+  "version": "1.0.0",
+  "description": "한국어 친화적인 날짜/시간 라이브러리 - moment.js, day.js의 한국어 특화 버전",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "한국어",
+    "korean",
+    "hangul",
+    "moment",
+    "date",
+    "time",
+    "datetime",
+    "날짜",
+    "시간",
+    "조사",
+    "particle",
+    "i18n",
+    "localization"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/hangul-moment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/hangul-moment/issues"
+  },
+  "homepage": "https://github.com/yourusername/hangul-moment#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
